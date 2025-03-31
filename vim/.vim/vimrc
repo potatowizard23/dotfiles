@@ -1,0 +1,13 @@
+"  _______      __                  __       __         
+" |       .----|__.---.-.----.-----|  .--.--|  |_.-----.
+" |.|   | |   _|  |  _  |  __|  _  |  |  |  |   _|  -__|
+" `-|.  |-|__| |__|___._|____|_____|__|___  |____|_____|
+"   |:  |                             |_____|           
+"   |::.|                                               
+"   `---'                                               
+" vimrc | Triacolyte | GNU GPL-3 (see LICENSE file)
+
+runtime plugins.vim
+runtime settings.vim
+runtime mappings.vim
+runtime autocmds.vim
