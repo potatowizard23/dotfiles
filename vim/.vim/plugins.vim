@@ -70,4 +70,8 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'linluk/vim-c2h'
 " }}}
 
+" {{{ markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+" }}}
+
 call plug#end()
