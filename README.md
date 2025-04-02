@@ -50,7 +50,7 @@ stow vim
 - [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim)
 - [tpope/vim-vinegar](https://github.com/tpope/vim-vinegar)
 - [luochen1990/rainbow](https://github.com/luochen1990/rainbow)
-- [tomasiser/vim-code-dark](https://github.com/tomasiser/vim-code-dark)
+- [sainnhe/sonokai](https://github.com/sainnhe/sonokai)
 - [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
 - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [tpope/vim-rhubarb](https://github.com/tpope/vim-rhubarb)
