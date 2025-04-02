@@ -11,10 +11,9 @@
 syntax on
 filetype plugin indent on
 
-let g:codedark_modern=1
-let g:codedark_italics=1
+let g:sonokai_style = 'shusia'
 
-colorscheme codedark
+colorscheme sonokai
 set termguicolors
 set background=dark
 
