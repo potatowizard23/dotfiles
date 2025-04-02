@@ -14,7 +14,7 @@ augroup lang_cpp
     autocmd FileType c.cpp nnoremap <buffer> <Leader>ed :Termdebug<CR>
     autocmd FileType c,cpp setlocal cindent
     autocmd FileType c,cpp setlocal foldmethod=syntax
-	autocmd BufEnter *.c,*.cpp,*.h,*.hpp silent FocusDispatch 'make'
+	autocmd BufEnter *.c,*.cpp,*.h,*.hpp silent FocusDispatch './build.sh'
 	autocmd FileType c,cpp let b:start='./run.sh'
 	autocmd FileType c,cpp nnoremap <buffer> <Leader>, :Dispatch<CR>
 	autocmd FileType c,cpp nnoremap <buffer> <Leader>. :Start<CR>
