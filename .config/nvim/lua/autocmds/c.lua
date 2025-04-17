@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		bufname = vim.fn.shellescape(vim.fn.expand("%"))
 		vim.b.dispatch = "bear -- make"
-		vim.b.start = "bear -- make run"
+		vim.b.start = "make run"
 
 		vim.opt_local.cindent = true
 		vim.opt_local.foldmethod = "syntax"
