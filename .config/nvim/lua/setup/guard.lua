@@ -14,4 +14,4 @@
 local ft = require("guard.filetype")
 
 ft("go"):fmt("lsp"):append("golines")
-ft("c,h"):fmt("lsp")
+ft("c,h,cpp,hpp"):fmt("lsp")

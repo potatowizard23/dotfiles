@@ -26,4 +26,4 @@ require("maps.lsp")
 require("maps.dap")
 
 require("autocmds.go")
-require("autocmds.c")
+require("autocmds.cpp")
