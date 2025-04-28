@@ -9,23 +9,14 @@
 -- ⠀⢿⣿⠀⠶⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠇⠀⠀⠀▝▘    ▝▀▘   ▀▀  ▀▀▝▘  ▀▀  ▝▀▘ ▝▀ ▀▘▝▀▀▀▘▝▀▀▀▘ ▀▀▝▘ ▀    ▝▀▝▘▝▀▀▀▘ ▀▀▘ 
 -- ⠀⠈⠻⣶⣇⣰⡄⠀⠀⠀⠀⢀⣠⣾⡿⠏⠀⢤⡀⠀
 -- ⠀⠀⠀⠈⠛⠛⠿⠿⠿⠿⡿⢿⡛⡩⠤⠴⠒⠛⠁⠀
--- init.lua | PotatoWizard23 | GNU GPL-3 (see LICENSE file)
+-- autocmds/autotools.lua | PotatoWizard23 | GNU GPL-3 (see LICENSE file)
 
-require("plugins")
-require("options")
+local autoconf_group = vim.api.nvim_create_augroup("autoconf", { clear = true })
 
-require("setup.treesitter")
-require("setup.lsp")
-require("setup.dap")
-require("setup.guard")
-require("setup.emmet")
-
-require("maps.vanilla")
-require("maps.maximizer")
-require("maps.telescope")
-require("maps.lsp")
-require("maps.dap")
-
-require("autocmds.go")
-require("autocmds.cpp")
-require("autocmds.autotools")
+vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = "auto.conf",
+	group = autoconf_group,
+	callback = function()
+		vim.opt_local.filetype = "sh"
+	end,
+})
