@@ -11,7 +11,7 @@
 -- ⠀⠀⠀⠈⠛⠛⠿⠿⠿⠿⡿⢿⡛⡩⠤⠴⠒⠛⠁⠀
 -- autocmds/go.lua | PotatoWizard23 | GNU GPL-3 (see LICENSE file)
 
-local go_group = vim.api.nvim_create_augroup("vimrc", { clear = true })
+local go_group = vim.api.nvim_create_augroup("go", { clear = true })
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "go",

@@ -9,9 +9,9 @@
 -- ⠀⢿⣿⠀⠶⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠇⠀⠀⠀▝▘    ▝▀▘   ▀▀  ▀▀▝▘  ▀▀  ▝▀▘ ▝▀ ▀▘▝▀▀▀▘▝▀▀▀▘ ▀▀▝▘ ▀    ▝▀▝▘▝▀▀▀▘ ▀▀▘ 
 -- ⠀⠈⠻⣶⣇⣰⡄⠀⠀⠀⠀⢀⣠⣾⡿⠏⠀⢤⡀⠀
 -- ⠀⠀⠀⠈⠛⠛⠿⠿⠿⠿⡿⢿⡛⡩⠤⠴⠒⠛⠁⠀
--- autocmds/c.lua | PotatoWizard23 | GNU GPL-3 (see LICENSE file)
+-- autocmds/cpp.lua | PotatoWizard23 | GNU GPL-3 (see LICENSE file)
 
-local cpp_group = vim.api.nvim_create_augroup("vimrc", { clear = true })
+local cpp_group = vim.api.nvim_create_augroup("cpp", { clear = true })
 
 vim.api.nvim_create_autocmd("BufEnter", {
 	pattern = "*.h,*.hpp",
