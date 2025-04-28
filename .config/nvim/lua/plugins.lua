@@ -49,6 +49,7 @@ return require("packer").startup(function(use)
 		"tpope/vim-surround",
 		"tpope/vim-commentary",
 		"windwp/nvim-autopairs",
+		"mattn/emmet-vim",
 	}
 	use { -- Formatting & Linting
 		"nvimdev/guard.nvim",
