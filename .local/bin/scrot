@@ -1,0 +1,2 @@
+#!/bin/sh
+maim --select "/home/$USER/Pictures/$(date).png"

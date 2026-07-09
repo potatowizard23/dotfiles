@@ -1,0 +1,14 @@
+#!/bin/sh
+# Sourced from https://wiki.archlinux.org/title/Xcompmgr#Toggle_Xcompmgr
+
+COMP=picom
+
+if pgrep $COMP &>/dev/null; then
+    echo "Turning $COMP OFF"
+    pkill $COMP &
+else
+    echo "Turning $COMP ON"
+    $COMP -c -C -t-5 -l-5 -r4.2 -o.55 &
+fi
+
+exit 0

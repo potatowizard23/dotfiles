@@ -1,0 +1,68 @@
+#!/bin/sh
+# Change displays based on which are available
+
+# Display settings
+MONITOR="HDMI-1"
+MONITOR_RES="1920x1080"
+LAPTOP="eDP-1"
+LAPTOP_RES="1920x1080"
+
+# Functions
+display_monitor_only() {
+	xrandr --output $MONITOR --mode $MONITOR_RES --primary \
+		--output $LAPTOP --off
+}
+
+display_laptop_only() {
+	xrandr --output $LAPTOP --mode $LAPTOP_RES --primary \
+		--output $MONITOR --off
+}
+
+display_both() {
+	xrandr --output $MONITOR --mode $MONITOR_RES --primary --right-of $LAPTOP \
+		--output $LAPTOP --mode $LAPTOP_RES
+}
+
+display_existing_monitor_or_exit() {
+	if [ $LAPTOP_EXISTS -eq 1 ]; then
+		display_laptop_only
+	elif [ $MONITOR_EXISTS -eq 1 ]; then
+		display_monitor_only
+	else
+		print "No displays found. Exiting."
+		exit 1
+	fi
+}
+
+print_help() {
+	echo "autorandr.sh [mode=0-2]"
+	echo "0: laptop only (default)"
+	echo "1: monitor only"
+	echo "2: both if possible"
+}
+
+# Determine mode based on stdout
+if [ $# -eq 0 ]; then
+	MODE=0
+elif [ $1 -eq 0 ] || [ $1 -eq 1 ] || [ $1 -eq 2 ]; then
+	MODE=$1
+else
+	print_help
+fi
+
+# Grep xrandr properties to check if displays exist
+xrandr --prop | grep -Eq "^$MONITOR connected"
+MONITOR_EXISTS=$((1 - $?))
+xrandr --prop | grep -Eq "^$LAPTOP connected"
+LAPTOP_EXISTS=$((1 - $?))
+
+# Change active displays based on the mode and if they exist
+if [ $MODE -eq 0 ] && [ $LAPTOP_EXISTS -eq 1 ]; then
+	display_laptop_only
+elif [ $MODE -eq 1 ] && [ $MONITOR_EXISTS -eq 1 ]; then
+	display_monitor_only
+elif [ $MODE -eq 2 ] && [ $LAPTOP_EXISTS -eq 1 ] && [ $MONITOR_EXISTS -eq 1 ]; then
+	display_both
+else
+	display_existing_monitor_or_exit
+fi

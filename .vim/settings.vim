@@ -21,7 +21,6 @@ set hlsearch
 " }}}
 
 " {{{ buffer-behaviour
-set hidden
 set autoread
 " }}}
 

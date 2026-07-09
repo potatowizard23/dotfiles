@@ -30,6 +30,7 @@ Plug 'tpope/vim-vinegar'
 
 " {{{ aesthetics
 Plug 'luochen1990/rainbow'
+Plug 'ap/vim-css-color'
 Plug 'sainnhe/sonokai'
 Plug 'vim-airline/vim-airline'
 " }}}

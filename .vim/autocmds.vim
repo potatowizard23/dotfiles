@@ -57,7 +57,7 @@ augroup END
 " {{{ shell
 augroup lang_sh
 	autocmd!
-	autocmd BufEnter *.sh silent :execute 'FocusDispatch ./' .. shellescape(expand('%'))
+	autocmd BufEnter *.sh silent :execute 'FocusDispatch ' .. shellescape(expand('%:p'))
 	autocmd FileType sh nnoremap <buffer> <Leader>, :Dispatch<CR>
 augroup END
 " }}}
